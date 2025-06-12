@@ -1,5 +1,5 @@
 import "../singlePage/singlePage.scss";
 
 export default function SinglePage() {
-	return <div>singlePage</div>;
+	return <div className="singlePage">singlePage</div>;
 }
