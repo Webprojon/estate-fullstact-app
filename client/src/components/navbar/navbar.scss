@@ -50,19 +50,29 @@ nav {
 	.right {
 		flex: 2;
 		display: flex;
+		gap: 20px;
 		align-items: center;
 		justify-content: flex-end;
 		height: 100%;
-		gap: 20px;
+		z-index: 100;
 		background-color: #fcf5f3;
 
 		@include md {
 			background: transparent;
 		}
 
-		a {
-			padding: 12px 24px;
-			margin: 20px;
+		.authBtn {
+			padding: 8px 24px;
+
+			&:first-child {
+				border-radius: 4px;
+				border: 1px solid #fece51;
+			}
+		}
+
+		.register {
+			background-color: #fece51;
+			border-radius: 4px;
 		}
 
 		.user {
@@ -111,11 +121,6 @@ nav {
 					background-color: red;
 				}
 			}
-		}
-
-		.register {
-			background-color: #fece51;
-			border-radius: 4px;
 		}
 
 		.menuIcon {

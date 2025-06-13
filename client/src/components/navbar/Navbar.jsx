@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
-	const user = true;
+	const user = false;
 	return (
 		<nav>
 			<div className="left">
@@ -13,9 +13,7 @@ export default function Navbar() {
 					<span>Estate</span>
 				</Link>
 				<Link to="/">Home</Link>
-				<Link to="/list">About</Link>
-				<Link to="/contact">Contact</Link>
-				<Link to="/agents">Agents</Link>
+				<Link to="/">About</Link>
 			</div>
 			<div className="right">
 				{user ? (
@@ -32,8 +30,10 @@ export default function Navbar() {
 					</div>
 				) : (
 					<>
-						<Link to="/login">Sign in</Link>
-						<Link to="/register" className="register">
+						<Link to="/login" className="authBtn">
+							Sign in
+						</Link>
+						<Link to="/register" className="register authBtn">
 							Sign up
 						</Link>
 					</>
