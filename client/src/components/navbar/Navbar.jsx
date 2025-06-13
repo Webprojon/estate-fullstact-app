@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
-
+	const user = true;
 	return (
 		<nav>
 			<div className="left">
@@ -18,10 +18,26 @@ export default function Navbar() {
 				<Link to="/agents">Agents</Link>
 			</div>
 			<div className="right">
-				<Link to="/login">Sign in</Link>
-				<Link to="/register" className="register">
-					Sign up
-				</Link>
+				{user ? (
+					<div className="user">
+						<img
+							src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+							alt="user img"
+						/>
+						<span>John Doe</span>
+						<Link to="/profile" className="profileBtn">
+							<div className="notification">2</div>
+							<span>Profile</span>
+						</Link>
+					</div>
+				) : (
+					<>
+						<Link to="/login">Sign in</Link>
+						<Link to="/register" className="register">
+							Sign up
+						</Link>
+					</>
+				)}
 				<div className="menuIcon">
 					<img src="/menu.png" alt="menu icon" onClick={() => setOpen(!open)} />
 				</div>

@@ -65,8 +65,57 @@ nav {
 			margin: 20px;
 		}
 
+		.user {
+			display: flex;
+			align-items: center;
+			font-weight: bold;
+
+			img {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-right: 20px;
+
+				@include sm {
+					margin-right: 0;
+				}
+			}
+
+			span {
+				@include sm {
+					display: none;
+				}
+			}
+
+			.profileBtn {
+				position: relative;
+				padding: 12px 24px;
+				background-color: #fece51;
+				cursor: pointer;
+				border: none;
+				border-radius: 4px;
+
+				.notification {
+					position: absolute;
+					top: -7px;
+					right: -7px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 20px;
+					height: 20px;
+					border-radius: 50%;
+					font-size: 12px;
+					color: white;
+					background-color: red;
+				}
+			}
+		}
+
 		.register {
 			background-color: #fece51;
+			border-radius: 4px;
 		}
 
 		.menuIcon {
