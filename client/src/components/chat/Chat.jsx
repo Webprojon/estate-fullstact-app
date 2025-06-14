@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../chat/chat.scss";
 
 export default function Chat() {
-	const [chat, setChat] = useState(true);
+	const [chat, setChat] = useState(false);
 
 	return (
 		<div className="chat">

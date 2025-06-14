@@ -52,12 +52,14 @@ export const login = async (req, res) => {
 			{ expiresIn: age },
 		);
 
+		const { password: userPassword, ...userInfo } = user;
+
 		res.cookie("token", token, {
 			httpOnly: true,
 			maxAge: age,
 		});
 
-		res.status(200).json({ message: "Logged in successfully" });
+		res.status(200).json(userInfo);
 	} catch (error) {
 		console.log(error);
 		res.status(500).json({ message: "Failed to login" });

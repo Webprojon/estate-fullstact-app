@@ -50,8 +50,8 @@ nav {
 	.right {
 		flex: 2;
 		display: flex;
-		gap: 20px;
 		align-items: center;
+		gap: 20px;
 		justify-content: flex-end;
 		height: 100%;
 		z-index: 100;
@@ -61,7 +61,7 @@ nav {
 			background: transparent;
 		}
 
-		.authBtn {
+		a {
 			padding: 8px 24px;
 
 			&:first-child {
@@ -79,6 +79,7 @@ nav {
 			display: flex;
 			align-items: center;
 			font-weight: bold;
+			margin-right: 20px;
 
 			img {
 				width: 40px;
@@ -93,6 +94,8 @@ nav {
 			}
 
 			span {
+				margin-right: 20px;
+
 				@include sm {
 					display: none;
 				}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
-	const user = false;
+	const user = true;
 	return (
 		<nav>
 			<div className="left">
@@ -30,10 +30,8 @@ export default function Navbar() {
 					</div>
 				) : (
 					<>
-						<Link to="/login" className="authBtn">
-							Sign in
-						</Link>
-						<Link to="/register" className="register authBtn">
+						<Link to="/login">Sign in</Link>
+						<Link to="/register" className="register">
 							Sign up
 						</Link>
 					</>
