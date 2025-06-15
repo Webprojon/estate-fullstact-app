@@ -1,0 +1,61 @@
+@import "../../responsive.scss";
+
+.profileUpdatePage {
+	height: 100%;
+	display: flex;
+
+	.formContainer {
+		flex: 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		form {
+			width: 270px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			.item {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+
+				label {
+					font-size: 14px;
+				}
+
+				input {
+					padding: 12px;
+					border-radius: 5px;
+					border: 1px solid gray;
+					outline: none;
+				}
+			}
+			button {
+				padding: 12px;
+				border-radius: 5px;
+				border: none;
+				background-color: #fece51;
+				color: white;
+				font-weight: bold;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.sideContainer {
+		flex: 2;
+		background-color: #fcf5f3;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+		justify-content: center;
+
+		.avatar {
+			width: 50%;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+}
