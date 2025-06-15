@@ -61,7 +61,7 @@ nav {
 			background: transparent;
 		}
 
-		a {
+		.loginBtn {
 			padding: 8px 24px;
 
 			&:first-child {
@@ -70,7 +70,8 @@ nav {
 			}
 		}
 
-		.register {
+		.registerBtn {
+			padding: 8px 24px;
 			background-color: #fece51;
 			border-radius: 4px;
 		}
@@ -155,6 +156,10 @@ nav {
 			transition: all 0.8s ease;
 			color: white;
 			background-color: black;
+
+			a {
+				padding: 20px;
+			}
 
 			&.active {
 				right: 0;

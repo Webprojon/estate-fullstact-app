@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./../../context/AuthContext";
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
-	const user = true;
+	const { currentUser } = useContext(AuthContext);
+
+	const handleOpen = () => {
+		setOpen(!open);
+	};
 	return (
 		<nav>
 			<div className="left">
@@ -16,13 +21,10 @@ export default function Navbar() {
 				<Link to="/">About</Link>
 			</div>
 			<div className="right">
-				{user ? (
+				{currentUser ? (
 					<div className="user">
-						<img
-							src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-							alt="user img"
-						/>
-						<span>John Doe</span>
+						<img src={currentUser.avatar || "./noavatar.png"} alt="user img" />
+						<span>{currentUser.username}</span>
 						<Link to="/profile" className="profileBtn">
 							<div className="notification">2</div>
 							<span>Profile</span>
@@ -30,20 +32,20 @@ export default function Navbar() {
 					</div>
 				) : (
 					<>
-						<Link to="/login">Sign in</Link>
-						<Link to="/register" className="register">
+						<Link to="/login" className="loginBtn">
+							Sign in
+						</Link>
+						<Link to="/register" className="registerBtn">
 							Sign up
 						</Link>
 					</>
 				)}
 				<div className="menuIcon">
-					<img src="/menu.png" alt="menu icon" onClick={() => setOpen(!open)} />
+					<img src="/menu.png" alt="menu icon" onClick={handleOpen} />
 				</div>
-				<div className={`${open ? "menu active" : "menu"}`}>
+				<div className={`${open ? "menu active" : "menu"}`} onClick={handleOpen}>
 					<Link to="/">Home</Link>
 					<Link to="/list">About</Link>
-					<Link to="/contact">Contact</Link>
-					<Link to="/agents">Agents</Link>
 					<Link to="/login">Sign in</Link>
 					<Link to="/register">Sign up</Link>
 				</div>
